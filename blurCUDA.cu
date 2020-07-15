@@ -164,7 +164,7 @@ int main (int argc, const char * argv[]) {
 	gettimeofday(&tim, NULL);
 	double t1=tim.tv_sec+(tim.tv_usec/1000000.0);
 
-	fp = fopen("David.ps", "r");
+	fp = fopen("sample.ps", "r");
 	while(! feof(fp))
 	{
 		fscanf(fp, "\n%[^\n]", str);
@@ -198,7 +198,7 @@ int main (int argc, const char * argv[]) {
 
 	gettimeofday(&tim, NULL);
 	t1=tim.tv_sec+(tim.tv_usec/1000000.0);
-	fout= fopen("DavidBlurCU.ps", "w");
+	fout= fopen("sampleBlurCU.ps", "w");
 	for (k=0;k<nlines;k++) fprintf(fout,"\n%s", lines[k]);
 	fprintf(fout,"\n");
 	for(row=0;row<rowsize;row++){

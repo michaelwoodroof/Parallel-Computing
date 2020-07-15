@@ -18,7 +18,7 @@ int main (int argc, const char * argv[]) {
 	int row = 0, col = 0, nblurs, lineno=0, k;
 	struct timeval tim;
 
-	fp = fopen("David.ps", "r");
+	fp = fopen("sample.ps", "r");
 
 	while(! feof(fp))
 	{
@@ -130,7 +130,7 @@ int main (int argc, const char * argv[]) {
 	double t2=tim.tv_sec+(tim.tv_usec/1000000.0);
 	printf("%.6lf seconds elapsed\n", t2-t1);
 
-	fout= fopen("DavidBlurOMS.ps", "w");
+	fout= fopen("sampleBlurOMS.ps", "w");
 	for (k=0;k<nlines;k++) fprintf(fout,"\n%s", lines[k]);
 	fprintf(fout,"\n");
 	for(row=0;row<rowsize;row++){
