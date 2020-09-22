@@ -12,7 +12,7 @@
 __global__ void kernelBlur(int *d_Rnew, int *d_Gnew, int *d_Bnew, int *d_R, int *d_G, int *d_B, int rowsize, int colsize) {
 	// Set-up
 	int row = blockIdx.y*blockDim.y + threadIdx.y;
-    int col = blockIdx.x*blockDim.x + threadIdx.x;
+    	int col = blockIdx.x*blockDim.x + threadIdx.x;
 	// Run Some Calculations
 	if (col < colsize && row < rowsize) {
 		if (row != 0 && row != (rowsize-1) && col != 0 && col != (colsize-1)) {
@@ -67,7 +67,7 @@ __global__ void kernelBlur(int *d_Rnew, int *d_Gnew, int *d_Bnew, int *d_R, int 
 __global__ void kernelCopy(int *d_Rnew, int *d_Gnew, int *d_Bnew, int *d_R, int *d_G, int *d_B, int rowsize, int colsize) {
 	// Set-up
 	int row = blockIdx.y*blockDim.y+threadIdx.y;
-    int col = blockIdx.x*blockDim.x+threadIdx.x;
+    	int col = blockIdx.x*blockDim.x+threadIdx.x;
 	if (col < colsize && row < rowsize) {
 		d_R[row * colsize + col] = d_Rnew[row * colsize + col];
 		d_G[row * colsize + col] = d_Gnew[row * colsize + col];
