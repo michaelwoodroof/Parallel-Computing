@@ -215,5 +215,5 @@ int main (int argc, const char * argv[]) {
 	t2=tim.tv_sec+(tim.tv_usec/1000000.0);
 	printf("Outputting File > %.6lf seconds elapsed\n", t2-t1);
 	fclose(fout);
-    return 0;
+    	return 0;
 }
